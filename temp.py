@@ -10,7 +10,6 @@ expr_list = ['XT.ec', 'AcGenral', 'ERRORREP', 'CSC', 'dll', 'pak']
 with open('fileList.csv', 'w', newline=''):
     pass
 
-
 def get_file_list(path):
     files_list = [f for f in listdir(path) if isfile(join(path, f))]
     folder_list = [f for f in listdir(path) if isdir(join(path, f))]
@@ -24,11 +23,9 @@ def get_file_list(path):
     for folder in folder_list:
         get_file_list(path + '\\' + folder)
 
-
 def writeOnCsv(row):
     with open('fileList.csv', 'a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(row)
-
 
 get_file_list(starting_path)
